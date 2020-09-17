@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROPPING TOOL</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.9/cropper.min.css">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <style>
+        .background-img{
+            background-size: 100% 100%;
+
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>CROPPING TOOL</p>
+    </header>
+  
+    <div class="container">
+        <!-- Row First for upload images-->
+        <div class="row"> 
+            <div class="col-sm-6 mt-3">
+                <h3>Standard Image</h3>
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="file1" onchange="loadFile(event)">
+                      <label class="custom-file-label" for="inputGroupFile02" >Choose file</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mt-3">
+                <h3>Background Image</h3>
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="file2" onchange="loadFile1(event)">
+                      <label class="custom-file-label" for="inputGroupFile02" >Choose file</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-sm-6 mt-1">
+                <img id="simg" > 
+            </div>
+            <div class="col-sm-6 mt-1">
+                <img id="bimg">
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-sm-12 mt-1">
+                <button type="button" id="crop"  class="btn btn-primary" style="visibility: hidden;">CROP</button>
+                 <b id="cr" style="visibility: hidden;">Cropped Image</b><br>
+                 <img src="#" id="cropped_img" class="d-none">
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-sm-12 mt-1">
+                <button type="button" id="combine"  class="btn btn-primary" style="visibility: hidden;">COMBINE</button>
+                 <b id="cr" style="visibility: hidden;">Merge Image</b><br>
+            </div>
+            <div class="col-sm-6">
+                    <div class="background-img" >                        
+                        <canvas id="merge" width="500" height="500"></canvas>
+                    </div>
+            </div>
+            <div class="col-sm-6">                     
+                    <canvas id="final" width="500" height="500"></canvas>
+                    <button type="button" id="finalbtn" class="btn btn-primary" style="visibility: hidden;">Final Button</button>
+           </div>
+        </div>
+    </div>
+    <!-- <footer>
+        <p>CROPPING TOOL USING HTML,CSS,JQUERY</p>
+    </footer> -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.9/cropper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.1.0/fabric.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js"></script>
+
+    <script src="code.js"></script>
+</body>
+</html>
